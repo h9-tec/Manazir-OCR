@@ -1,4 +1,4 @@
-name: Chandra CI
+name: Manazir OCR CI
 
 on: [push]
 
