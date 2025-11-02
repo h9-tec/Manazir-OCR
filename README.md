@@ -1,5 +1,7 @@
 > # Manazir OCR — Arabic optics‑inspired multi‑model OCR
 
+![Manazir OCR — UI Screenshot](assets/screenshot-ui.png)
+
 **Manazir OCR** is an Arabic‑first, layout‑aware OCR framework inspired by Ibn al‑Haytham’s Kitāb al‑Manāẓir (Book of Optics). It orchestrates multiple backends (local Transformers, vLLM servers, lightweight engines, and commercial APIs) to extract high‑quality text from PDFs and images, producing Markdown/HTML with layout blocks and figure crops.
 
 ## 🌟 Features
@@ -42,6 +44,32 @@ manazir_app          # Basic demo (choose Classic hf/vllm or pick a Registry mod
 manazir_app_pro      # Professional UI (toggle Nerd Theme in sidebar)
 ```
 
+## ▶️ How to run
+
+1) Run the Professional app (recommended):
+
+```bash
+manazir_app_pro
+# then open http://localhost:8501
+```
+
+Alternative:
+
+```bash
+python -m docustruct.scripts.run_app_professional
+```
+
+2) Run via CLI:
+
+```bash
+# Convert a PDF to Markdown using Arabic-first defaults
+manazir ocr input.pdf --language ar --output out_dir
+
+# List models and pick one
+manazir list-available-models
+manazir ocr input.png --language ar --model qwen2_vl_2b
+```
+
 ## 🧩 Supported Arabic models (highlights)
 
 - Specialized: `qari_ocr`, `dimi_arabic_ocr`, `ocr_rl2`, `trocr_arabic`
@@ -51,6 +79,10 @@ manazir_app_pro      # Professional UI (toggle Nerd Theme in sidebar)
 - Commercial (optional): `openai_gpt4o`, `mistral_ocr`
 
 Additions in this repo: `qwen2_5_vl_7b_arabic`, `paddle_ocr_arabic_v4`, `surya_ocr_arabic`, `qari_ocr_waraqon`.
+
+### Model browser
+
+![Available Models](assets/screenshot-available-models.png)
 
 ## 🛠️ Programmatic usage
 
@@ -78,6 +110,11 @@ export VLLM_MODEL_NAME=manazir
 
 - Import path remains `docustruct.*` for now; package name is `manazir-ocr`.
 - Some backends require extra installs (e.g., `paddleocr`). Commercial APIs need keys and may incur costs.
+
+## 📁 Assets
+
+- Store project screenshots and images in `assets/`.
+- Included: `assets/screenshot-ui.png`, `assets/screenshot-available-models.png`.
 
 ## 👤 Author
 
