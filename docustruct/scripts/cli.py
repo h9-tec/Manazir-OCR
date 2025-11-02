@@ -420,7 +420,7 @@ def list_available_models(tier, language, commercial_only, json_output):
             click.echo(f"  Languages: {', '.join(model.languages[:5])}{'...' if len(model.languages) > 5 else ''}")
             click.echo(f"  Strengths: {', '.join(model.strengths)}")
             click.echo(f"  License: {model.license}")
-            click.echo(f"  Commercial Use: {'\u2713' if model.commercial_use else '\u2717'}")
+            click.echo(f"  Commercial Use: {'✓' if model.commercial_use else '✗'}")
             click.echo(f"  Description: {model.description}")
             click.echo()
 
