@@ -393,7 +393,7 @@ def ocr(
                 }, f, ensure_ascii=False, indent=2)
             else:
                 f.write(full_text)
-        click.echo(f"\u2713 Saved to {output_path}")
+        click.echo(f"✓ Saved to {output_path}")
     else:
         click.echo(full_text)
 
